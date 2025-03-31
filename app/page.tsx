@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StorySection from "@/components/StorySection";
 import MenuSection from "@/components/MenuSection";
 import Presentation from "@/components/Presentation";
+import Advantage from "@/components/Advantage";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <StorySection />
       <MenuSection />
       <Presentation />
+      <Advantage />
     </main>
   );
 }
