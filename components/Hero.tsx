@@ -22,6 +22,7 @@ export default function Hero() {
       x: -80,
       opacity: 0,
       stagger: 0.2,
+      delay: 0.3,
       duration: 0.5,
     });
 
