@@ -1,5 +1,10 @@
 "use client";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function Header() {
   return (
     <header className="flex items-center bg-olive justify-between px-6 md:px-20 py-6 ">

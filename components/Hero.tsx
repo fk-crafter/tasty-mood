@@ -1,16 +1,17 @@
 "use client";
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const text = "Healthy Eating is important part of lifestyle";
+const text = "Pizza & Pasta crafted with passion served with soul";
 const words = text.split(" ");
 
 export default function Hero() {
   const heroImgRef = useRef(null);
   const heroTextRef = useRef(null);
+  const heroSubtitleRef = useRef(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -22,27 +23,27 @@ export default function Hero() {
       opacity: 0,
       stagger: 0.2,
       duration: 0.5,
-    })
-      .from(
-        heroImgRef.current,
-        {
-          x: 750,
-          duration: 1,
-          ease: "power2.inOut",
-        },
-        "imgAnim"
-      )
-      .from(
-        ".heroimg",
-        {
-          x: 600,
-          duration: 1,
-          rotate: 360,
-          ease: "power2.inOut",
-          stagger: 0.2,
-        },
-        "imgAnim"
-      );
+    });
+
+    tl.from(heroSubtitleRef.current, {
+      x: -80,
+      opacity: 0,
+      duration: 0.5,
+    });
+
+    gsap.from(heroImgRef.current, {
+      x: 750,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".heroimg", {
+      x: 600,
+      duration: 1,
+      rotate: 360,
+      ease: "power2.inOut",
+      stagger: 0.2,
+    });
   }, []);
 
   return (
@@ -59,9 +60,11 @@ export default function Hero() {
           ))}
         </h2>
 
-        <p className="text-sm md:text-base text-gray-300 mt-6 max-w-md">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue
-          arcu
+        <p
+          ref={heroSubtitleRef}
+          className="text-sm md:text-base text-gray-300 mt-6 max-w-md"
+        >
+          Authentic Italian flavors made with love
         </p>
       </div>
 
