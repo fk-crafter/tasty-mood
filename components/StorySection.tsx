@@ -25,7 +25,6 @@ export default function StorySection() {
         start: "top 70%",
         end: "bottom 90%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -37,7 +36,6 @@ export default function StorySection() {
         start: "top 80%",
         end: "bottom 90%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -49,7 +47,6 @@ export default function StorySection() {
         start: "top 80%",
         end: "bottom 90%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -61,7 +58,6 @@ export default function StorySection() {
         start: "top 70%",
         end: "bottom 90%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -73,7 +69,6 @@ export default function StorySection() {
         start: "top 80%",
         end: "bottom 90%",
         scrub: 1,
-        markers: true,
       },
     });
   }, []);
