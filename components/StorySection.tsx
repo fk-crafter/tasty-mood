@@ -8,6 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function StorySection() {
   const storyImgLeftRef = useRef(null);
+  const storyTextLeftRef = useRef(null);
+  const storySubtitleRef = useRef(null);
+  const storyImgRightRef = useRef(null);
+  const storyTextRightRef = useRef(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -15,50 +19,113 @@ export default function StorySection() {
     gsap.from(storyImgLeftRef.current, {
       x: -760,
       duration: 2,
+      rotation: 360,
       scrollTrigger: {
         trigger: storyImgLeftRef.current,
         start: "top 70%",
-        end: "bottom 100%",
+        end: "bottom 90%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+
+    gsap.from(storyTextLeftRef.current, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: storyTextLeftRef.current,
+        start: "top 80%",
+        end: "bottom 90%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+
+    gsap.from(storySubtitleRef.current, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: storySubtitleRef.current,
+        start: "top 80%",
+        end: "bottom 90%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+
+    gsap.from(storyImgRightRef.current, {
+      x: 760,
+      duration: 2,
+      scrollTrigger: {
+        trigger: storyImgRightRef.current,
+        start: "top 70%",
+        end: "bottom 90%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+
+    gsap.from(storyTextRightRef.current, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: storyTextRightRef.current,
+        start: "top 80%",
+        end: "bottom 90%",
         scrub: 1,
         markers: true,
       },
     });
   }, []);
+
   return (
     <section className="bg-olive text-white px-6 md:px-20 py-10">
-      <div className="grid md:grid-cols-2 gap-10  items-center">
+      <div className="grid md:grid-cols-2 gap-10 items-start">
         <div className="space-y-2">
           <Image
             ref={storyImgLeftRef}
-            src="/image2.png"
+            src="/story-left.png"
             alt="Italian Dish"
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto ml-[-100px] rounded-lg"
             width={500}
             height={500}
           />
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold leading-snug mb-4">
+            <h2
+              ref={storyTextLeftRef}
+              className="text-3xl md:text-4xl font-serif font-bold leading-snug mb-4"
+            >
               Discover the soul <br /> of Italian cuisine
             </h2>
-            <p className="text-gray-300 text-sm md:text-base max-w-md">
+            <p
+              ref={storySubtitleRef}
+              className="text-gray-300 text-sm md:text-base max-w-md"
+            >
               Authentic recipes, crafted with fresh local ingredients and a lot
               of passion.
             </p>
           </div>
         </div>
+      </div>
 
+      <div className="grid md:grid-cols-2 gap-10 items-end mt-32">
+        <div></div>
         <div className="space-y-6">
-          <p className="text-gray-300 text-sm md:text-base max-w-sm md:ml-auto">
+          <p
+            ref={storyTextRightRef}
+            className="text-gray-300 text-sm md:text-base max-w-sm md:ml-auto"
+          >
             Every plate tells a story — seasoned with tradition and love.
           </p>
 
           <div className="flex justify-end">
             <Image
+              ref={storyImgRightRef}
               src="/spice.png"
               alt="Spices"
               className="rounded-lg"
-              width={500}
-              height={500}
+              width={300}
+              height={300}
             />
           </div>
         </div>

@@ -7,7 +7,6 @@ export default function Home() {
     <main>
       <Header />
       <hr className="border-t border-white/25" />
-
       <Hero />
       <StorySection />
     </main>
