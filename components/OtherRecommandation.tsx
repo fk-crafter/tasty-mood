@@ -8,10 +8,34 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function CategorySection() {
+export default function OtherRecommandation() {
   const gridRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   useGSAP(() => {
+    gsap.from(titleRef.current, {
+      clipPath: "inset(100% 0 0 0)",
+      opacity: 0,
+      duration: 1.2,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top 85%",
+      },
+    });
+
+    gsap.from(subtitleRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: subtitleRef.current,
+        start: "top 90%",
+      },
+    });
+
     gsap.from(".category-card", {
       opacity: 0,
       scale: 0.85,
@@ -28,10 +52,13 @@ export default function CategorySection() {
   return (
     <section className="bg-white text-olive px-6 md:px-20 py-20">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-serif font-bold">
+        <h2
+          ref={titleRef}
+          className="text-4xl font-serif font-bold inline-block"
+        >
           Explore more Flavors of Italy
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p ref={subtitleRef} className="text-gray-600 mt-2 max-w-md mx-auto">
           Discover our authentic Italian selection — from antipasti to dolci.
         </p>
       </div>
