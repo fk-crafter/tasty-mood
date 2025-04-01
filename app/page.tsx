@@ -7,6 +7,9 @@ import Advantage from "@/components/Advantage";
 import BlogSection from "@/components/BlogSection";
 import ReservationSection from "@/components/ReservationSection";
 import CategorySection from "@/components/CategorySection";
+import Testimonials from "@/components/Testimonials";
+import ClientOnly from "@/components/ClientOnly";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +24,10 @@ export default function Home() {
       <BlogSection />
       <ReservationSection />
       <CategorySection />
+      <ClientOnly>
+        <Testimonials />
+      </ClientOnly>
+      <Footer />
     </main>
   );
 }

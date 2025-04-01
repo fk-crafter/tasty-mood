@@ -42,7 +42,7 @@ export default function ReservationSection() {
 
         <button
           type="submit"
-          className="bg-olive text-white font-semibold px-6 py-3 rounded-md hover:bg-opacity-90 transition"
+          className="bg-olive text-white cursor-pointer font-semibold px-6 py-3 rounded-md hover:bg-opacity-90 transition"
         >
           Book Now
         </button>

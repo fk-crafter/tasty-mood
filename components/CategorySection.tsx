@@ -7,7 +7,7 @@ export default function CategorySection() {
     <section className="bg-white text-olive px-6 md:px-20 py-20">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-serif font-bold">
-          Explore the Flavors of Italy
+          Explore more Flavors of Italy
         </h2>
         <p className="text-gray-600 mt-2">
           Discover our authentic Italian selection — from antipasti to dolci.
