@@ -48,11 +48,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-olive text-white min-h-screen flex flex-col md:flex-row items-center px-6 md:px-20 py-10 relative overflow-hidden">
-      <div className="w-full md:w-1/2 z-10 flex flex-col justify-center items-center md:items-start text-center md:text-left min-h-screen md:min-h-0">
+    <section className="bg-olive text-white min-h-screen flex flex-col md:flex-row items-center px-4 py-10 md:px-20 relative overflow-hidden">
+      {/* Texte */}
+      <div className="w-full md:w-1/2 z-10 text-center md:text-left">
         <h2
           ref={heroTextRef}
-          className="text-4xl md:text-6xl font-serif font-bold leading-tight flex flex-wrap max-w-xl"
+          className="text-3xl md:text-6xl font-serif font-bold leading-snug md:leading-tight flex flex-wrap justify-center md:justify-start max-w-full md:max-w-xl"
         >
           {words.map((word, i) => (
             <span key={i} className="hero-word mr-2">
@@ -63,13 +64,14 @@ export default function Hero() {
 
         <p
           ref={heroSubtitleRef}
-          className="text-sm md:text-base text-gray-300 mt-6 max-w-md"
+          className="text-sm md:text-base text-gray-300 mt-4 md:mt-6 max-w-full md:max-w-md"
         >
           Authentic Italian flavors made with love
         </p>
       </div>
 
-      <div className="w-full md:w-1/2 mt-10 md:mt-0 z-0 flex flex-col items-center md:items-end max-w-full md:max-w-[60%] md:absolute md:top-1/2 md:-translate-y-1/2 md:right-0">
+      {/* Image principale (mobile ET desktop) */}
+      <div className="w-full md:w-1/2 mt-10 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 z-0 max-w-full md:max-w-[60%]">
         <img
           ref={heroImgRef}
           src="/hero-img.png"
@@ -77,28 +79,29 @@ export default function Hero() {
           className="w-full h-auto rounded-lg"
         />
 
-        <div className="flex justify-center gap-6 mt-6">
+        <div className="flex justify-center gap-4 mt-4 md:mt-6">
           <img
             src="/circle1.png"
             alt="Épice 1"
-            className="heroimg w-28 h-28 rounded-full object-cover"
+            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
           />
           <img
             src="/circle2.png"
             alt="Épice 2"
-            className="heroimg w-28 h-28 rounded-full object-cover"
+            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
           />
           <img
             src="/circle3.png"
             alt="Épice 3"
-            className="heroimg w-28 h-28 rounded-full object-cover"
+            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
           />
         </div>
       </div>
 
-      <div className="absolute left-4 bottom-20 rotate-[-90deg] origin-left text-white text-sm tracking-wide">
+      {/* Scroll Indicator */}
+      <div className="absolute left-2 bottom-10 md:left-4 md:bottom-20 rotate-[-90deg] origin-left text-white text-xs md:text-sm tracking-wide">
         Scroll
-        <div className="border-l border-dashed border-white h-8 ml-2 inline-block align-middle" />
+        <div className=" border-l border-dashed border-white h-6 md:h-8 ml-2 inline-block align-middle" />
       </div>
     </section>
   );
