@@ -88,13 +88,13 @@ export default function StorySection() {
           <div>
             <h2
               ref={storyTextLeftRef}
-              className="text-3xl md:text-4xl font-serif font-bold leading-snug mb-4"
+              className="text-3xl md:text-4xl font-serif font-bold ml-16 leading-snug mb-4"
             >
               Discover the soul <br /> of Italian cuisine
             </h2>
             <p
               ref={storySubtitleRef}
-              className="text-gray-300 text-sm md:text-base max-w-md"
+              className="text-gray-300 text-sm ml-10 md:text-base max-w-md"
             >
               Authentic recipes, crafted with fresh local ingredients and a lot
               of passion.

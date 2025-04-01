@@ -54,17 +54,28 @@ const ReviewCard = ({ name, username, body, img }: any) => (
 
 export default function Testimonials() {
   return (
-    <div className="py-12 space-y-6">
-      <Marquee pauseOnHover speed={40} gradient={false}>
-        {reviews.map((r, i) => (
-          <ReviewCard key={`top-${i}`} {...r} />
-        ))}
-      </Marquee>
-      <Marquee pauseOnHover speed={40} gradient={false} direction="right">
-        {reviews.map((r, i) => (
-          <ReviewCard key={`bot-${i}`} {...r} />
-        ))}
-      </Marquee>
-    </div>
+    <section className="px-6 md:px-20 py-20 bg-white text-olive">
+      {/* Titre de section */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-serif font-bold">What our guests say</h2>
+        <p className="text-sm text-gray-500 mt-2">
+          A taste of Italy — straight from the hearts of our happy customers.
+        </p>
+      </div>
+
+      {/* Marquee */}
+      <div className="space-y-6 pb-6">
+        <Marquee pauseOnHover speed={40} gradient={false}>
+          {reviews.map((r, i) => (
+            <ReviewCard key={`top-${i}`} {...r} />
+          ))}
+        </Marquee>
+        <Marquee pauseOnHover speed={40} gradient={false} direction="right">
+          {reviews.map((r, i) => (
+            <ReviewCard key={`bot-${i}`} {...r} />
+          ))}
+        </Marquee>
+      </div>
+    </section>
   );
 }
