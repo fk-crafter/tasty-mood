@@ -1,19 +1,43 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogSection() {
+  const blogRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(".blog-post", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scale: 0.98,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: blogRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
   return (
-    <section className="bg-white text-olive px-6 md:px-20 py-20">
+    <section ref={blogRef} className="bg-white text-olive px-6 md:px-20 py-24">
       <div className="grid md:grid-cols-2 gap-16">
-        <div>
+        <div className="blog-post">
           <div className="relative">
             <Image
               src="/gnocchi.jpg"
               alt="Homemade Gnocchi"
               width={600}
               height={400}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg transition-transform duration-300 hover:scale-105"
             />
             <span className="absolute top-4 right-4 bg-olive text-white px-4 py-1 text-sm rounded-sm">
               Recipe
@@ -53,14 +77,14 @@ export default function BlogSection() {
           </div>
         </div>
 
-        <div>
+        <div className="blog-post">
           <div className="relative">
             <Image
               src="/salad.jpg"
               alt="Asparagus Salad"
               width={600}
               height={400}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg transition-transform duration-300 hover:scale-105"
             />
             <span className="absolute top-4 right-4 bg-olive text-white px-4 py-1 text-sm rounded-sm">
               Story
