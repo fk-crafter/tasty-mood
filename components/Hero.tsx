@@ -48,8 +48,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-olive text-white min-h-screen flex items-center px-6 md:px-20 py-10 relative overflow-hidden">
-      <div className="w-full md:w-1/2 z-10">
+    <section className="bg-olive text-white min-h-screen flex flex-col md:flex-row items-center px-6 md:px-20 py-10 relative overflow-hidden">
+      <div className="w-full md:w-1/2 z-10 flex flex-col justify-center items-center md:items-start text-center md:text-left min-h-screen md:min-h-0">
         <h2
           ref={heroTextRef}
           className="text-4xl md:text-6xl font-serif font-bold leading-tight flex flex-wrap max-w-xl"
@@ -69,7 +69,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="w-full md:w-1/2 absolute right-0 top-1/2 -translate-y-1/2 z-0 max-w-[60%] hidden md:block">
+      <div className="w-full md:w-1/2 mt-10 md:mt-0 z-0 flex flex-col items-center md:items-end max-w-full md:max-w-[60%] md:absolute md:top-1/2 md:-translate-y-1/2 md:right-0">
         <img
           ref={heroImgRef}
           src="/hero-img.png"
@@ -98,7 +98,7 @@ export default function Hero() {
 
       <div className="absolute left-4 bottom-20 rotate-[-90deg] origin-left text-white text-sm tracking-wide">
         Scroll
-        <div className=" border-l border-dashed border-white h-8 ml-2 inline-block align-middle" />
+        <div className="border-l border-dashed border-white h-8 ml-2 inline-block align-middle" />
       </div>
     </section>
   );

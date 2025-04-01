@@ -28,14 +28,14 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex items-center bg-olive justify-between px-6 md:px-20 py-6 ">
-      <h1 ref={logoRef} className="text-2xl font-bold text-white">
+    <header className="flex items-center justify-between bg-olive px-4 md:px-20 py-4 md:py-6">
+      <h1 ref={logoRef} className="text-xl md:text-2xl font-bold text-white">
         TastyMood
       </h1>
 
-      <div ref={rightContentRef} className="flex items-center gap-4">
-        <span className="text-white text-sm md:text-base">+33 01 01 01 01</span>
-        <button className="px-4 py-2 border cursor-pointer border-white text-white rounded-lg hover:bg-white hover:text-olive transition">
+      <div ref={rightContentRef} className="flex items-center gap-2 md:gap-4">
+        <span className="text-white text-xs md:text-sm">+33 01 01 01 01</span>
+        <button className="px-3 md:px-4 py-2 border cursor-pointer border-white text-white text-xs md:text-sm rounded-lg hover:bg-white hover:text-olive transition">
           Book now
         </button>
       </div>
