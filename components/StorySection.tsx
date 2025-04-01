@@ -74,27 +74,28 @@ export default function StorySection() {
   }, []);
 
   return (
-    <section className="bg-olive text-white px-6 md:px-20 py-10">
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div className="space-y-2">
+    <section className="bg-olive text-white px-4 py-10 md:px-20 overflow-x-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="space-y-6 flex flex-col items-center md:items-start">
           <Image
             ref={storyImgLeftRef}
             src="/story-left.png"
             alt="Italian Dish"
-            className="w-full h-auto ml-[-100px] rounded-lg"
+            className="w-full h-auto rounded-lg"
             width={500}
             height={500}
           />
-          <div>
+          <div className="text-center md:text-left">
             <h2
               ref={storyTextLeftRef}
-              className="text-3xl md:text-4xl font-serif font-bold ml-16 leading-snug mb-4"
+              className="text-2xl md:text-4xl font-serif font-bold leading-snug mb-4"
             >
-              Discover the soul <br /> of Italian cuisine
+              Discover the soul <br className="hidden md:block" /> of Italian
+              cuisine
             </h2>
             <p
               ref={storySubtitleRef}
-              className="text-gray-300 text-sm ml-10 md:text-base max-w-md"
+              className="text-gray-300 text-sm md:text-base max-w-md mx-auto md:mx-0"
             >
               Authentic recipes, crafted with fresh local ingredients and a lot
               of passion.
@@ -103,17 +104,17 @@ export default function StorySection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10 items-end mt-32">
-        <div></div>
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-20 md:mt-32">
+        <div className="hidden md:block" />
+        <div className="space-y-6 flex flex-col items-center md:items-end text-center md:text-right">
           <p
             ref={storyTextRightRef}
-            className="text-gray-300 text-sm md:text-base max-w-sm md:ml-auto"
+            className="text-gray-300 text-sm md:text-base max-w-sm"
           >
             Every plate tells a story — seasoned with tradition and love.
           </p>
 
-          <div className="flex justify-end">
+          <div className="w-full md:w-auto flex justify-center md:justify-end">
             <Image
               ref={storyImgRightRef}
               src="/spice.png"
