@@ -18,7 +18,6 @@ export default function StorySection() {
 
     gsap.from(storyImgLeftRef.current, {
       x: -760,
-      duration: 2,
       rotation: 360,
       scrollTrigger: {
         trigger: storyImgLeftRef.current,
@@ -81,11 +80,11 @@ export default function StorySection() {
             ref={storyImgLeftRef}
             src="/story-left.png"
             alt="Italian Dish"
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto md:-ml-28 rounded-lg "
             width={500}
             height={500}
           />
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:ml-14">
             <h2
               ref={storyTextLeftRef}
               className="text-2xl md:text-4xl font-serif font-bold leading-snug mb-4"
@@ -114,7 +113,7 @@ export default function StorySection() {
             Every plate tells a story — seasoned with tradition and love.
           </p>
 
-          <div className="w-full md:w-auto flex justify-center md:justify-end">
+          <div className="w-64 md:w-auto flex justify-center mr-10 md:mr-10 md:justify-end">
             <Image
               ref={storyImgRightRef}
               src="/spice.png"

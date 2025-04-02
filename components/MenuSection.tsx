@@ -19,7 +19,6 @@ export default function MenuSection() {
       y: -100,
       opacity: 0,
       duration: 1.2,
-      ease: "power2.out",
       scrollTrigger: {
         trigger: decoImgRef.current,
         start: "top 10%",
@@ -72,7 +71,7 @@ export default function MenuSection() {
     <section className="relative bg-white text-olive px-6 md:px-20 py-20 overflow-hidden">
       <div
         ref={decoImgRef}
-        className="absolute -top-40 right-36 w-40 md:w-60 opacity-70 rounded-full pointer-events-none"
+        className="absolute hidden md:block -top-40 right-36 w-40 md:w-60 opacity-70 rounded-full pointer-events-none"
       >
         <Image
           src="/menu-img.png"

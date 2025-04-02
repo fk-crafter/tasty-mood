@@ -49,7 +49,6 @@ export default function Hero() {
 
   return (
     <section className="bg-olive text-white min-h-screen flex flex-col md:flex-row items-center px-4 py-10 md:px-20 relative overflow-hidden">
-      {/* Texte */}
       <div className="w-full md:w-1/2 z-10 text-center md:text-left">
         <h2
           ref={heroTextRef}
@@ -70,35 +69,33 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Image principale (mobile ET desktop) */}
-      <div className="w-full md:w-1/2 mt-10 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 z-0 max-w-full md:max-w-[60%]">
+      <div className="w-full md:w-1/2 md:absolute md:right-10 md:top-[45%] md:-translate-y-1/2 z-0 max-w-full md:max-w-[60%] flex flex-col items-center md:items-end">
         <img
           ref={heroImgRef}
           src="/hero-img.png"
           alt="Plat"
-          className="w-full h-auto rounded-lg"
+          className="w-[50%] md:w-[70%] h-auto rounded-lg mt-6 md:mt-0"
         />
 
-        <div className="flex justify-center gap-4 mt-4 md:mt-6">
+        <div className="w-[90%] md:w-full flex justify-center md:justify-end gap-4 mt-4 md:-mt-14 md:mr-24">
           <img
             src="/circle1.png"
             alt="Épice 1"
-            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
+            className="heroimg w-16 h-16 md:w-24 md:h-24 rounded-full object-cover"
           />
           <img
             src="/circle2.png"
             alt="Épice 2"
-            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
+            className="heroimg w-16 h-16 md:w-24 md:h-24 rounded-full object-cover"
           />
           <img
             src="/circle3.png"
             alt="Épice 3"
-            className="heroimg w-20 h-20 md:w-28 md:h-28 rounded-full object-cover"
+            className="heroimg w-16 h-16 md:w-24 md:h-24 rounded-full object-cover"
           />
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute left-2 bottom-10 md:left-4 md:bottom-20 rotate-[-90deg] origin-left text-white text-xs md:text-sm tracking-wide">
         Scroll
         <div className=" border-l border-dashed border-white h-6 md:h-8 ml-2 inline-block align-middle" />
