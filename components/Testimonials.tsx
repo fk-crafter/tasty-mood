@@ -101,33 +101,43 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="px-6 md:px-20 py-20 bg-white text-olive">
-      <div className="text-center mb-10">
+    <section className="px-4 md:px-20 py-14 md:py-20 bg-white text-olive">
+      <div className="text-center mb-8 md:mb-10">
         <h2
           ref={titleRef}
-          className="text-4xl font-serif font-bold inline-block"
+          className="text-2xl md:text-4xl font-serif font-bold inline-block"
         >
           What our guests say
         </h2>
         <p
           ref={subtitleRef}
-          className="text-sm text-gray-500 mt-2 max-w-md mx-auto"
+          className="text-xs md:text-sm text-gray-500 mt-2 max-w-xs md:max-w-md mx-auto"
         >
           A taste of Italy — straight from the hearts of our happy customers.
         </p>
       </div>
 
-      <div ref={marqueeContainerRef} className="space-y-6 pb-6">
-        <Marquee pauseOnHover speed={40} gradient={false}>
-          {reviews.map((r, i) => (
-            <ReviewCard key={`top-${i}`} {...r} />
-          ))}
-        </Marquee>
-        <Marquee pauseOnHover speed={40} gradient={false} direction="right">
-          {reviews.map((r, i) => (
-            <ReviewCard key={`bot-${i}`} {...r} />
-          ))}
-        </Marquee>
+      <div ref={marqueeContainerRef} className="space-y-4 md:space-y-6 pb-6">
+        <div className="block md:hidden">
+          <Marquee pauseOnHover speed={35} gradient={false}>
+            {reviews.map((r, i) => (
+              <ReviewCard key={`mobile-${i}`} {...r} />
+            ))}
+          </Marquee>
+        </div>
+
+        <div className="hidden md:block space-y-6">
+          <Marquee pauseOnHover speed={40} gradient={false}>
+            {reviews.map((r, i) => (
+              <ReviewCard key={`top-${i}`} {...r} />
+            ))}
+          </Marquee>
+          <Marquee pauseOnHover speed={40} gradient={false} direction="right">
+            {reviews.map((r, i) => (
+              <ReviewCard key={`bot-${i}`} {...r} />
+            ))}
+          </Marquee>
+        </div>
       </div>
     </section>
   );
