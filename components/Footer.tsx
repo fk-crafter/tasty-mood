@@ -3,13 +3,19 @@
 import Link from "next/link";
 import { Instagram, Facebook, Youtube } from "lucide-react";
 import TripadvisorOrionIcon from "@/components/icons/TripadvisorOrionIcon";
-
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-olive text-white px-6 md:px-20 pt-16 pb-10">
       <div className="grid md:grid-cols-3 gap-10 items-start border-b border-white/20 pb-10">
         <div>
-          <h2 className="text-3xl font-serif font-bold">TastyMood</h2>
+          <Image
+            src="/logo.png"
+            alt="TastyMood Logo"
+            className="h-12 md:h-16 object-contain"
+            width={150}
+            height={150}
+          />
         </div>
 
         <div className="space-y-2 text-sm">
