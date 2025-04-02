@@ -33,7 +33,7 @@ export default function Header() {
         ref={logoRef}
         src="/logo.png"
         alt="TastyMood Logo"
-        className="h-12 md:h-16 object-contain"
+        className="h-12 pr-12 md:pr-0 md:h-16 object-contain"
         width={150}
         height={150}
       />
